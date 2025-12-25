@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SHANKAR CLUB</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', Arial, sans-serif;
+}
+html,body{
+  height:100%;
+  scroll-behavior:smooth;
+}
+body{
+  background:#000;
+  color:#fff;
+  scroll-snap-type:y mandatory;
+  overflow-y:scroll;
+}
+.section{
+  min-height:100vh;
+  padding:30px 15px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  scroll-snap-align:start;
+}
+.yellow{
+  color:#FFD700;
+  font-weight:700;
+}
+p{
+  max-width:900px;
+  line-height:1.7;
+}
+.slider{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+iframe{
+  border-radius:12px;
+}
+.counter{
+  font-size:26px;
+  margin:12px 0;
+}
+.game{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin:20px 0;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.big{
+  font-size:48px;
+  margin-top:25px;
+}
+.click-all{
+  position:fixed;
+  inset:0;
+  z-index:999;
+}
+.play-overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:60px;
+  cursor:pointer;
+}
+.video-wrap{
+  position:relative;
+}
+</style>
+</head>
+
+<body>
+
+<!-- CLICK ANYWHERE → WHATSAPP -->
+<div class="click-all" onclick="goWA()"></div>
+
+<!-- PAGE 1 -->
+<section class="section">
+  <h1 class="yellow">SHANKAR CLUB</h1>
+  <div class="slider">
+    <iframe src="https://www.instagram.com/p/DSsSXnPE85p/embed" width="320" height="400"></iframe>
+    <iframe src="https://www.instagram.com/p/DSsScbOk6GZ/embed" width="320" height="400"></iframe>
+  </div>
+</section>
+
+<!-- PAGE 2 (MANUAL PLAY YOUTUBE) -->
+<section class="section">
+  <div class="video-wrap" id="playVideo">
+    <iframe id="ytVideo"
+      width="360"
+      height="215"
+      src="https://www.youtube.com/embed/21Lyt0SlFdk?enablejsapi=1"
+      frameborder="0"
+      allow="encrypted-media"
+      allowfullscreen>
+    </iframe>
+    <div class="play-overlay">▶</div>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="section">
+  <h2>We're The Best Service <span class="yellow">[Provider]</span></h2>
+  <h3>Khelo Dum Par Jeeto Bumpar</h3>
+  <p>
+    Welcome To Shankar Club The World's Biggest Club We offer Wide Variety Of Options<br><br>
+    ✅ Instant Withdrawal and deposit<br>
+    ✅ 24/7 Customer Service
+  </p>
+  <h2 class="yellow">PLAY NOW</h2>
+</section>
+
+<!-- PAGE 4 -->
+<section class="section">
+  <h2 class="yellow">Live Stats</h2>
+  <div class="counter">👥 Active Users: <span id="c1">500000</span></div>
+  <div class="counter">💰 Today Deposits: <span id="c2">500000</span></div>
+  <div class="counter">🏆 Lucky Winners: <span id="c3">10000</span></div>
+</section>
+
+<!-- PAGE 5 -->
+<section class="section">
+  <h2 class="yellow">Best Service</h2>
+  <p>Welcome To Shankar Club We Provide wide Variety For Sports Book In our site</p>
+</section>
+
+<!-- PAGE 6 -->
+<section class="section">
+  <h2 class="yellow">Details about Our site and Games</h2>
+
+  <div class="game">
+    <iframe src="https://www.instagram.com/p/DSsTahzk7tT/embed" width="220" height="260"></iframe>
+    <div>
+      <h3 class="yellow">Cricket</h3>
+      <p>Our First And Most loved Game By people And high chances of Winnings</p>
+    </div>
+  </div>
+
+  <div class="game">
+    <iframe src="https://www.instagram.com/p/DSsTNIOE5ZL/embed" width="220" height="260"></iframe>
+    <div>
+      <h3 class="yellow">Football ⚽</h3>
+      <p>Football Is easy to play and earn more by playing our this game</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 7 -->
+<section class="section">
+  <h2 class="yellow"><b>Leading & Trusted Site</b></h2>
+  <h2><b>PLAY NOW!</b></h2>
+</section>
+
+<!-- PAGE 8 -->
+<section class="section">
+  <h2 class="yellow">The Shankar Gurantee You Will Love to play here fast withdrawal and easy deposit</h2>
+</section>
+
+<!-- PAGE 9 -->
+<section class="section">
+  <h2 class="yellow">FAQS</h2>
+  <h3 class="yellow">CHANGE YOUR STYLE WITH ROCKY BOOK. GET YOUR ID AND START WINNING NOW!</h3>
+  <p>
+    Welcome to the Frequently Asked Questions (FAQ) section of Rocky Book.
+    We understand that sports betting might raise various questions,
+    especially if you're new to the world of betting or exploring our platform
+    for the first time.
+  </p>
+</section>
+
+<!-- PAGE 10 -->
+<section class="section">
+  <h2 class="yellow">ABOUT US</h2>
+  <div class="big yellow">Trusted Since 2010</div>
+</section>
+
+<!-- PAGE 11 -->
+<section class="section">
+  <h2 class="yellow">Thank You For Visiting OUR site</h2>
+  <p>Join Now today And Earn more</p>
+  <div class="big yellow">THANK YOU</div>
+</section>
+
+<script>
+// MANUAL PLAY YOUTUBE
+document.getElementById("playVideo").addEventListener("click", function(){
+  const iframe = document.getElementById("ytVideo");
+  iframe.contentWindow.postMessage(
+    '{"event":"command","func":"playVideo","args":""}',
+    '*'
+  );
+});
+
+// WhatsApp redirect
+function goWA(){
+  window.location.href="https://wa.me/918471088676";
+}
+setTimeout(goWA,15000);
+
+// fake counters
+function counter(id, base){
+  setInterval(()=>{
+    document.getElementById(id).innerText =
+      base + Math.floor(Math.random()*200-100);
+  },800);
+}
+counter("c1",500000);
+counter("c2",500000);
+counter("c3",10000);
+</script>
+
+</body>
+</html>
