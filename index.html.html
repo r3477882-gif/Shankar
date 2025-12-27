@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shankar Club</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body{
+    height:100vh;
+    background:radial-gradient(circle at top,#3a2a00,#000);
+    overflow:hidden;
+}
+
+/* fallback screen (1 micro second ke liye dikhega) */
+.container{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
+}
+h1{
+    font-size:32px;
+    background:linear-gradient(to right,gold,#ffcf40);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+</style>
+</head>
+
+<body onclick="goWhatsApp()">
+
+<div class="container">
+    <h1>Redirecting to WhatsApp…</h1>
+</div>
+
+<script>
+function goWhatsApp(){
+    window.location.replace("https://wa.me/918471088676");
+}
+
+/* INSTANT REDIRECT */
+goWhatsApp();
+</script>
+
+</body>
+</html>
