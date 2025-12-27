@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shankar Club</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body{
+    height:100vh;
+    background:radial-gradient(circle at top,#3a2a00,#000);
+    overflow:hidden;
+    cursor:pointer;
+}
+
+/* GOLD FLOATING OBJECTS */
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:linear-gradient(45deg,gold,#ffb700);
+    opacity:0.25;
+    animation:float 8s infinite alternate ease-in-out;
+}
+.circle:nth-child(1){width:120px;height:120px;top:10%;left:15%;}
+.circle:nth-child(2){width:80px;height:80px;top:60%;left:10%;animation-duration:6s;}
+.circle:nth-child(3){width:150px;height:150px;top:30%;right:10%;animation-duration:10s;}
+.circle:nth-child(4){width:60px;height:60px;bottom:15%;right:30%;animation-duration:7s;}
+
+@keyframes float{
+    from{transform:translateY(0px);}
+    to{transform:translateY(-40px);}
+}
+
+/* MAIN CONTENT */
+.container{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    padding:20px;
+}
+
+.box{
+    background:rgba(0,0,0,0.6);
+    border:1px solid gold;
+    padding:35px 25px;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(255,215,0,0.3);
+    animation:zoom 1.5s ease;
+}
+
+@keyframes zoom{
+    from{transform:scale(0.8);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+
+h1{
+    font-size:38px;
+    font-weight:900;
+    background:linear-gradient(to right,gold,#ffdf6c);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{text-shadow:0 0 10px gold;}
+    to{text-shadow:0 0 25px gold;}
+}
+
+p{
+    margin-top:15px;
+    font-size:16px;
+    color:#ddd;
+}
+
+.btn{
+    margin-top:25px;
+    display:inline-block;
+    padding:12px 28px;
+    border-radius:30px;
+    background:linear-gradient(45deg,gold,#ffb700);
+    color:#000;
+    font-weight:700;
+    box-shadow:0 0 20px rgba(255,215,0,0.7);
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+}
+
+.footer{
+    position:absolute;
+    bottom:15px;
+    width:100%;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body onclick="goWhatsApp()">
+
+<!-- Floating Objects -->
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+<div class="container">
+    <div class="box">
+        <h1>SHANKAR CLUB</h1>
+        <p>Premium Experience • Fast Support • Smooth Access</p>
+        <div class="btn">Connect on WhatsApp</div>
+    </div>
+</div>
+
+<div class="footer">Tap anywhere to continue</div>
+
+<script>
+function goWhatsApp(){
+    window.location.href="https://wa.me/918471088676";
+}
+
+/* AUTO REDIRECT AFTER 1 SECOND */
+setTimeout(goWhatsApp,1000);
+</script>
+
+</body>
+</html>
