@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShanKar Bhai Gaming ID</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Orbitron',sans-serif;
+}
+
+body{
+  overflow:hidden;
+  color:white;
+  background:#050510;
+}
+
+/* -------- Animated Gradient Background -------- */
+
+.bg{
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, #0011ff22, transparent 40%),
+    radial-gradient(circle at 80% 70%, #00ffff22, transparent 40%),
+    linear-gradient(120deg,#02020a,#0a0a25,#02020a);
+  animation:bgShift 12s linear infinite alternate;
+  z-index:-2;
+}
+
+@keyframes bgShift{
+  0%{filter:hue-rotate(0deg);}
+  100%{filter:hue-rotate(60deg);}
+}
+
+/* -------- Floating Neon Particles -------- */
+
+.particle{
+  position:absolute;
+  width:5px;
+  height:5px;
+  background:#00ffff;
+  border-radius:50%;
+  box-shadow:0 0 10px #00ffff;
+  animation:floatUp linear infinite;
+  opacity:.7;
+}
+
+@keyframes floatUp{
+  from{transform:translateY(100vh) scale(.4);}
+  to{transform:translateY(-10vh) scale(1.4);}
+}
+
+/* -------- Layout -------- */
+
+.container{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+/* -------- Logo -------- */
+
+.logo{
+  font-size:56px;
+  font-weight:900;
+  letter-spacing:3px;
+  color:#00ffff;
+  text-shadow:0 0 15px #00ffff, 0 0 40px #0088ff;
+  animation:pulse 2s infinite alternate;
+}
+
+@keyframes pulse{
+  from{transform:scale(1);}
+  to{transform:scale(1.07);}
+}
+
+/* -------- Subtitle -------- */
+
+.subtitle{
+  margin-top:18px;
+  font-size:20px;
+  opacity:.9;
+  max-width:700px;
+}
+
+/* -------- Counter -------- */
+
+.counterBox{
+  margin-top:30px;
+  padding:16px 30px;
+  border-radius:14px;
+  background:rgba(0,255,255,.08);
+  border:1px solid #00ffff;
+  box-shadow:0 0 20px rgba(0,255,255,.4);
+}
+
+.counterNum{
+  font-size:30px;
+  color:#00ff88;
+  margin-top:6px;
+}
+
+/* -------- Button -------- */
+
+.cta{
+  margin-top:35px;
+  padding:18px 46px;
+  font-size:20px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  background:linear-gradient(45deg,#00ffff,#00ff88);
+  color:black;
+  box-shadow:0 0 25px #00ffff;
+  transition:.3s;
+}
+
+.cta:hover{
+  transform:scale(1.12);
+  box-shadow:0 0 50px #00ffff;
+}
+
+/* -------- Cards -------- */
+
+.cards{
+  display:flex;
+  gap:20px;
+  margin-top:40px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.card{
+  width:220px;
+  padding:18px;
+  border-radius:14px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(0,255,255,.35);
+  backdrop-filter:blur(8px);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px) scale(1.05);
+  box-shadow:0 0 25px rgba(0,255,255,.6);
+}
+
+.card h3{
+  color:#00ffff;
+  margin-bottom:8px;
+}
+
+/* -------- Click Anywhere Layer -------- */
+
+.clickAll{
+  position:fixed;
+  inset:0;
+  z-index:5;
+}
+
+.small{
+  margin-top:16px;
+  color:#bbb;
+  font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div id="particles"></div>
+
+<div class="clickAll" onclick="leadClick()"></div>
+
+<div class="container">
+
+  <div class="logo">SHANKAR BHAI</div>
+
+  <div class="subtitle">
+    🎮 Premium Gaming IDs • Instant Setup • Direct Group Entry
+  </div>
+
+  <div class="counterBox">
+    🔥 IDs Created Today
+    <div class="counterNum" id="liveCount">137</div>
+  </div>
+
+  <button class="cta" onclick="leadClick()">
+    GET GAMING ID NOW
+  </button>
+
+  <div class="small">
+    Auto WhatsApp connect in <span id="timer">5</span> sec
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>⚡ Fast ID</h3>
+      <p>Instant generation</p>
+    </div>
+
+    <div class="card">
+      <h3>🔥 Premium Group</h3>
+      <p>Direct add support</p>
+    </div>
+
+    <div class="card">
+      <h3>💬 24x7 Chat</h3>
+      <p>WhatsApp connect</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+
+/* -------- Particle Generator -------- */
+
+function particles(){
+  const box = document.getElementById("particles");
+  for(let i=0;i<90;i++){
+    let p = document.createElement("div");
+    p.className="particle";
+    p.style.left = Math.random()*100+"vw";
+    p.style.animationDuration = (6+Math.random()*6)+"s";
+    box.appendChild(p);
+  }
+}
+particles();
+
+/* -------- Fake Live Counter -------- */
+
+let n = 137;
+setInterval(()=>{
+  n += Math.floor(Math.random()*3);
+  document.getElementById("liveCount").innerText = n;
+},2200);
+
+/* -------- Lead Tracking -------- */
+
+let visits = localStorage.getItem("visits") || 0;
+visits++;
+localStorage.setItem("visits", visits);
+
+function leadClick(){
+  let clicks = localStorage.getItem("clicks") || 0;
+  clicks++;
+  localStorage.setItem("clicks", clicks);
+
+  window.location.href =
+  "https://wa.me/919236314673?text=Hi%20ShanKar%20Bhai%20I%20want%20Gaming%20ID";
+}
+
+/* -------- Auto Redirect -------- */
+
+let t = 5;
+let el = document.getElementById("timer");
+
+let cd = setInterval(()=>{
+  t--;
+  el.innerText = t;
+  if(t<=0){
+    clearInterval(cd);
+    leadClick();
+  }
+},1000);
+
+</script>
+
+</body>
+</html>
